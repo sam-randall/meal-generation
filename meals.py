@@ -39,7 +39,20 @@ def send_email(content: str):
 
 
 
+def bolded(s: str):
+    return f"\033[1m{s}\033[0m"
+
+
+def italicized(s: str):
+    return f'\x1B[3m{s}\x1B[0m'
+
+
 def main():
+
+    print(bolded('Reminder: Fill out coupons'))
+    print(italicized('to make Shreya happy.'))
+
+    print()
 
     with open('recipes.json', 'r') as f:
         recipes = json.load(f)
